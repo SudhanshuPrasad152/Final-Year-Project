@@ -17,14 +17,28 @@ const Carousel = () => {
         </div>
         <div className="carousel-item">
           <img
-            src={require("../images/laptop.jpg")}
+            src={require("../images/laptops.jpg")}
             className="d-block w-100"
             alt="..."
           />
         </div>
         <div className="carousel-item">
           <img
-            src={require("../images/headphone.jpg")}
+            src={require("../images/headphones.jpg")}
+            className="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src={require("../images/smart-watch.jpg")}
+            className="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src={require("../images/assistant.jpg")}
             className="d-block w-100"
             alt="..."
           />
