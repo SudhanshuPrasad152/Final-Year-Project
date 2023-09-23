@@ -8,9 +8,13 @@ const Navbar = () => {
         style={{ backgroundColor: "#5072A7" }}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/" style={{ color: "#E6E6FA" }}>
-            Rent-Tech
-          </a>
+          <Link className="navbar-brand" to="/" style={{ color: "#E6E6FA" }}>
+            <img
+              src={require("../images/Website Logo.jpg")}
+              alt=""
+              className="logo"
+            />
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -46,7 +50,7 @@ const Navbar = () => {
               <form
                 className="d-flex"
                 role="search"
-                style={{ marginLeft: "270px" }}
+                style={{ marginLeft: "200px" }}
               >
                 <input
                   style={{ width: "400px" }}
@@ -61,7 +65,18 @@ const Navbar = () => {
               </form>
             </ul>
           </div>
-
+          <Link
+            className=" rent glow-on-hover"
+            style={{
+              marginRight: "120px",
+              textDecoration: "none",
+              textAlign: "center",
+              paddingTop: "12px",
+            }}
+            to="/rent"
+          >
+            Rent Your Products Here
+          </Link>
           <Link className="btn btn-light mx-2" to="/login">
             LogIn
           </Link>
