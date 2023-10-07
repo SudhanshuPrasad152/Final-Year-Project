@@ -1,8 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import backimg from "../images/backimg.png";
 const Login = () => {
-  document.body.style.background =
-    "linear-gradient(to right, #fc00ff, #00dbde)";
+  document.body.style.backgroundImage = `url(${backimg})`;
+  document.body.style.backgroundPosition = "center center";
+  document.body.style.backgroundAttachment = "fixed";
+  document.body.style.backgroundRepeat = "no-repeat";
+
   let navigate = useNavigate();
   const handleSubmit = () => {
     navigate("/");
@@ -10,7 +14,10 @@ const Login = () => {
   return (
     <>
       <div className="container my-5 d-flex justify-content-center ">
-        <form className="cred" onSubmit={handleSubmit}>
+        <form
+          className="cred border border-white"
+          onSubmit={handleSubmit}
+        >
           <div className="mb-3">
             <h2 className="my-3">Log In to your Account</h2>
             <label htmlFor="email" className="form-label">
@@ -23,7 +30,11 @@ const Login = () => {
               name="email"
               aria-describedby="emailHelp"
             />
-            <div id="emailHelp" className="form-text">
+            <div
+              id="emailHelp"
+              className="form-text"
+              style={{ color: "white" }}
+            >
               We'll never share your email with anyone else.
             </div>
           </div>
@@ -42,8 +53,8 @@ const Login = () => {
 
           <button
             type="submit"
-            className="btn btn-primary"
-            style={{ marginLeft: "380px" }}
+            className="btn btn-light"
+            style={{ marginLeft: "380px", color: "black" }}
           >
             Log In
           </button>

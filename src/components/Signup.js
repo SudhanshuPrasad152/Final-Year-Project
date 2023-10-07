@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import backimg from '../images/backimg.png'
 const Signup = () => {
-  document.body.style.background =
-    "linear-gradient(to right, #fc00ff, #00dbde)";
+  document.body.style.backgroundImage = `url(${backimg})`;
+  document.body.style.backgroundPosition = "center center";
+  document.body.style.backgroundAttachment = "fixed";
+  document.body.style.backgroundRepeat = "no-repeat";
 
   let navigate = useNavigate();
   const handleSubmit = () => {
@@ -11,7 +14,7 @@ const Signup = () => {
   return (
     <>
       <div className="container d-flex justify-content-center my-5">
-        <form className="cred" onSubmit={handleSubmit}>
+        <form className="cred border border-white" onSubmit={handleSubmit}>
           <h2 className="my-3">Sign Up to use Rent-Tech</h2>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
@@ -30,7 +33,7 @@ const Signup = () => {
               aria-describedby="emailHelp"
               name="email"
             />
-            <div id="emailHelp" className="form-text">
+            <div id="emailHelp" className="form-text" style={{color: "white"}}>
               We'll never share your email with anyone else.
             </div>
           </div>
@@ -63,8 +66,8 @@ const Signup = () => {
 
           <button
             type="submit"
-            className="btn btn-primary"
-            style={{ marginLeft: "380px" }}
+            className="btn btn-light "
+            style={{ marginLeft: "380px", color: 'black' }}
           >
             Sign Up
           </button>
@@ -72,13 +75,13 @@ const Signup = () => {
       </div>
       <div
         className="container d-flex justify-content-center"
-        style={{ marginTop: "-25px", color: "white" }}
+        style={{ marginTop: "-25px", color: "black" }}
       >
         <p>Already on Rent-Tech?</p>
         <Link
           to="/login"
           className="mx-2"
-          style={{ textDecoration: "none", color: "#FFFFF0" }}
+          style={{ textDecoration: "none", color: "black" }}
         >
           <strong>Log in</strong>
         </Link>

@@ -125,9 +125,8 @@
 .cred {
   padding: 10px 20px 30px 20px;
   border-radius: 10px;
-  box-shadow: 7px 5px 5px -3px rgba(92, 92, 92, 0.4),
-    0px 5px 10px rgba(92, 92, 92, 0.6), -7px 5px 5px -3px rgba(92, 92, 92, 0.4);
-  background-color: white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .logo {
