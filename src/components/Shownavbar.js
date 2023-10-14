@@ -5,7 +5,14 @@ const Shownavbar = ({ children }) => {
   const location = useLocation();
   const [shownavbar, setshownavbar] = useState(false);
   useEffect(() => {
-    if (location.pathname === "/login" || location.pathname === "/signup") {
+    console.log()
+    if (
+      location.pathname === "/login" ||
+      location.pathname === "/signup" ||
+      location.pathname === "/rent-item" ||
+      location.pathname === "/forgot-password" ||
+      location.pathname.substring(0,15) === "/reset-password"
+    ) {
       setshownavbar(false);
     } else {
       setshownavbar(true);

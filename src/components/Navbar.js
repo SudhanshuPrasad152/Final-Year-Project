@@ -1,6 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
+  let navigate = useNavigate();
+  const handleClick = () =>{
+    localStorage.removeItem("token");
+    navigate("/login");
+  }
   return (
     <div>
       <nav
@@ -65,24 +70,18 @@ const Navbar = () => {
               </form>
             </ul>
           </div>
-          <Link
-            className=" rent glow-on-hover"
-            style={{
-              marginRight: "120px",
-              textDecoration: "none",
-              textAlign: "center",
-              paddingTop: "12px",
-            }}
-            to="/rent"
-          >
-            Rent Your Products Here
-          </Link>
-          <Link className="btn btn-light mx-2" to="/login">
-            LogIn
-          </Link>
-          <Link className="btn btn-light mx-2" to="/signup">
-            SignUp
-          </Link>
+          {(localStorage.getItem("token") && localStorage.getItem("role") === "Customer") ? (
+            <button className="btn btn-light" onClick={handleClick}>LogOut</button>
+          ) : (
+            <form>
+              <Link className="btn btn-light mx-2" to="/login">
+                LogIn
+              </Link>
+              <Link className="btn btn-light mx-2" to="/signup">
+                SignUp
+              </Link>
+            </form>
+          )}
         </div>
       </nav>
     </div>
