@@ -3,7 +3,7 @@ const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const fetchuser = (req, res, next) => {
-  const token = req.header("auth-token");
+  const token = req.header("token");
   if (!token) {
     res
       .status(401)

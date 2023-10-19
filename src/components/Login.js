@@ -35,6 +35,7 @@ const Login = () => {
     } else if (json.success && json.role === "Renter") {
       localStorage.setItem("token", json.authToken);
       localStorage.setItem("role", json.role);
+      localStorage.setItem("email", json.email);
       navigate("/rent-item");
     } else {
       alert("Login with valid credentials");
@@ -140,13 +141,13 @@ const Login = () => {
       </div>
       <div
         className="container d-flex justify-content-center"
-        style={{ marginTop: "-25px", color: "white" }}
+        style={{ marginTop: "-25px", color: "black", fontSize: '20px' }}
       >
         <p>New to Rent-Tech?</p>
         <Link
           to="/signup"
           className="mx-2"
-          style={{ textDecoration: "none", color: "#FFFFF0" }}
+          style={{ textDecoration: "none", color: "black" }}
         >
           <strong>Join Now</strong>
         </Link>

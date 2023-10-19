@@ -39,7 +39,7 @@ const Signup = () => {
       localStorage.setItem("token", json.authToken);
       navigate("/login");
     } else {
-      alert("Enter Valid Credentials");
+      alert("Enter Valid Credentials or try with different email");
     }
   };
 
@@ -170,7 +170,7 @@ const Signup = () => {
       </div>
       <div
         className="container d-flex justify-content-center my-2"
-        style={{ marginTop: "-25px", color: "black" }}
+        style={{ marginTop: "-25px", color: "black", fontSize: '20px' }}
       >
         <p>Already on Rent-Tech?</p>
         <Link

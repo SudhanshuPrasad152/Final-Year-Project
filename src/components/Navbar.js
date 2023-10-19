@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   let navigate = useNavigate();
-  const handleClick = () =>{
+  const handleClick = () => {
     localStorage.removeItem("token");
     navigate("/login");
-  }
+  };
   return (
     <div>
       <nav
@@ -53,9 +53,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <form
-                className="d-flex"
+                className="d-flex justify-content-center"
                 role="search"
-                style={{ marginLeft: "200px" }}
+                style={{ marginLeft: "260px" }}
               >
                 <input
                   style={{ width: "400px" }}
@@ -70,8 +70,23 @@ const Navbar = () => {
               </form>
             </ul>
           </div>
-          {(localStorage.getItem("token") && localStorage.getItem("role") === "Customer") ? (
-            <button className="btn btn-light" onClick={handleClick}>LogOut</button>
+          <Link
+            to="/signup"
+            className="btn btn-light"
+            style={
+              localStorage.getItem("token") &&
+              localStorage.getItem("role") === "Customer"
+                ? { marginRight: "125px" }
+                : { marginRight: "80px" }
+            }
+          >
+            Want to Rent Something?
+          </Link>
+          {localStorage.getItem("token") &&
+          localStorage.getItem("role") === "Customer" ? (
+            <button className="btn btn-light" onClick={handleClick}>
+              LogOut
+            </button>
           ) : (
             <form>
               <Link className="btn btn-light mx-2" to="/login">
