@@ -43,7 +43,7 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   className="nav-link"
                   to="/about"
@@ -51,8 +51,8 @@ const Navbar = () => {
                 >
                   About
                 </Link>
-              </li>
-              <form
+              </li> */}
+              {/* <form
                 className="d-flex justify-content-center"
                 role="search"
                 style={{ marginLeft: "260px" }}
@@ -67,7 +67,7 @@ const Navbar = () => {
                 <button className="btn btn-light" type="submit">
                   Search
                 </button>
-              </form>
+              </form> */}
             </ul>
           </div>
           <Link

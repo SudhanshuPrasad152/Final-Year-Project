@@ -9,6 +9,9 @@ import Signup from "./components/Signup";
 import RentHome from "./components/RentHome";
 import ForgotPwd from "./components/ForgotPwd";
 import ResetPwd from "./components/ResetPwd";
+import ProductSec from "./components/ProductSec";
+import ProductPage from "./components/ProductPage";
+import PaymentPage from "./components/PaymentPage";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route exact path="/rent-item" element={<RentHome />} />
           <Route exact path="/forgot-password" element={<ForgotPwd />} />
           <Route exact path="/reset-password/:id/:authToken" element={<ResetPwd/>}/>
+          <Route exact path="/product-list/:text" element={<ProductSec/>}/>
+          <Route exact path="/product-list/:text/:item" element={<ProductPage/>}/>
+          <Route exact path="/product-list/:text/:item/payment" element={<PaymentPage/>}/>
         </Routes>
       </BrowserRouter>
     </>

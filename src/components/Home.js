@@ -12,7 +12,7 @@ const Home = () => {
         <Section img={"smartphone"} text={"Smart Phones"} />
         <Section img={"laptop"} text={"Laptops"} />
         <Section img={"smart-device"} text={"Smart Devices"} />
-        <Section img={"headphone"} text={"HeadPhones"} />
+        <Section img={"headphone"} text={"Headphones"} />
       </div>
       <Footer />
     </>

@@ -36,7 +36,6 @@ const Signup = () => {
 
     const json = await response.json();
     if (json.success) {
-      localStorage.setItem("token", json.authToken);
       navigate("/login");
     } else {
       alert("Enter Valid Credentials or try with different email");

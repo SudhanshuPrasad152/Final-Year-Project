@@ -30,6 +30,7 @@ router.post(
       return res.status(400).json({ error: error.array() });
     }
     try {
+      let success = false;
       const {
         name,
         age,
@@ -56,7 +57,8 @@ router.post(
         productDescription,
         productImage
       });
-      res.json(details);
+      success = true;
+      res.json({success, details});
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");

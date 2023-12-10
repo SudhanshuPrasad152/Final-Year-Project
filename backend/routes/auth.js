@@ -48,14 +48,8 @@ router.post(
         password: secPass,
         role: req.body.role,
       });
-      const data = {
-        user: {
-          id: user.id,
-        },
-      };
-      const authToken = jwt.sign(data, process.env.JWT_SECRET);
       success = true;
-      res.json({ success, authToken: authToken });
+      res.json({ success });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");

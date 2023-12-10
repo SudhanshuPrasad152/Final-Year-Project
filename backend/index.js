@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/rent", require("./routes/rent"));
+app.use("/api/product", require("./routes/product"));
 
 app.listen(port, () => {
   console.log(`Rent-Tech is listening on ${port}`);
