@@ -12,6 +12,7 @@ import ResetPwd from "./components/ResetPwd";
 import ProductSec from "./components/ProductSec";
 import ProductPage from "./components/ProductPage";
 import PaymentPage from "./components/PaymentPage";
+import PaymentSuccess from "./components/PaymentSuccess";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/product-list/:text" element={<ProductSec/>}/>
           <Route exact path="/product-list/:text/:item" element={<ProductPage/>}/>
           <Route exact path="/product-list/:text/:item/payment" element={<PaymentPage/>}/>
+          <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         </Routes>
       </BrowserRouter>
     </>

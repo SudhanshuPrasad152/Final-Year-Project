@@ -31,6 +31,8 @@ const Login = () => {
     if (json.success && json.role === "Customer") {
       localStorage.setItem("token", json.authToken);
       localStorage.setItem("role", json.role);
+      localStorage.setItem("email", json.email);
+      localStorage.setItem("name", json.name);
       navigate("/");
     } else if (json.success && json.role === "Renter") {
       localStorage.setItem("token", json.authToken);
@@ -104,7 +106,9 @@ const Login = () => {
                 </label>
               </div>
 
-              <Link to="/forgot-password" style={{textDecoration: "none"}}>Forgot Password?</Link>
+              <Link to="/forgot-password" style={{ textDecoration: "none" }}>
+                Forgot Password?
+              </Link>
             </div>
           </div>
           <div className="mb-3 d-flex justify-content-evenly mt-4">
@@ -141,7 +145,7 @@ const Login = () => {
       </div>
       <div
         className="container d-flex justify-content-center"
-        style={{ marginTop: "-25px", color: "black", fontSize: '20px' }}
+        style={{ marginTop: "-25px", color: "black", fontSize: "20px" }}
       >
         <p>New to Rent-Tech?</p>
         <Link
