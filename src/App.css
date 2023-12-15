@@ -234,16 +234,16 @@ input::-webkit-inner-spin-button {
 
 .rentHead {
   text-align: center;
-  font-family: 'Belleza', sans-serif;
+  font-family: "Belleza", sans-serif;
   font-size: 50px;
 }
 
-.photo{
+.photo {
   height: 246px;
   width: 273px;
 }
 
-.filter{
+.filter {
   padding: 30px 30px 20px 2px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   height: 200px;
@@ -256,7 +256,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -266,10 +267,24 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.payment{
+.payment {
   border-radius: 25px;
   padding: 14px;
   padding: 20px 20px 10px 1px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 600px;
+  width: 900px;
+}
+
+.tenure {
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+.tenure:focus {
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
 }

@@ -30,8 +30,32 @@ const PaymentPage = () => {
       setAmount(9125);
     }
   };
+  const [days, setDays] = useState();
+  const handleinput = (e) => {
+    setDays(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let month = days / 15;
+    if (month <= 1) {
+      setAmount(days * 75);
+    } else if (month > 1 && month <= 2) {
+      setAmount(days * 60);
+    } else if (month > 2 && month <= 6) {
+      setAmount(days * 50);
+    } else if (month > 6 && month <= 12) {
+      setAmount(days * 40);
+    } else if (month > 12 && month <= 24) {
+      setAmount(days * 25);
+    }
+  };
 
   const displayRazorpay = async () => {
+    if (days > 360) {
+      alert("Please enter number of days in the range of 1 to 360");
+      return;
+    }
     const res = await loadRazorpay(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -83,9 +107,7 @@ const PaymentPage = () => {
 
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center my-3 payment">
-      <p style={{ fontWeight: "bold" }}>
-        Choose Your Rent Tenure according to your preference
-      </p>
+      <p style={{ fontWeight: "bold" }}>Choose Your Rent Tenure</p>
       <form className="d-flex justify-content-evenly flex-column">
         <div className="my-2 form-check">
           <input
@@ -166,6 +188,27 @@ const PaymentPage = () => {
           >
             12 Months
           </label>
+        </div>
+      </form>
+      <form onSubmit={handleSubmit}>
+        <div className="my-2">
+          <label
+            htmlFor="random"
+            style={{ marginLeft: "5px" }}
+            className="form-check-label mx-2"
+          >
+            Enter the tenure according to your preference &#40;Enter Number of
+            Days only&#41;:
+          </label>
+          <input
+            type="number"
+            id="random"
+            className="tenure"
+            onChange={handleinput}
+            max={360}
+            autoComplete="off"
+          />
+          <button className="btn btn-primary mx-3">Submit</button>
         </div>
       </form>
       <p style={{ fontWeight: "bold" }}>Your final amount to pay is {amount}</p>
