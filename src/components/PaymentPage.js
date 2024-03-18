@@ -122,7 +122,7 @@ const PaymentPage = () => {
             style={{ marginLeft: "5px" }}
             className="form-check-label"
           >
-            0-15 Days
+            15 Days
           </label>
         </div>
         <div className="my-2 form-check">
